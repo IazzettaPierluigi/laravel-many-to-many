@@ -22,7 +22,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ProjectSeeder::class,
             //faccio seed dedicata altrimenti rilancia 'projectseeder' creando altri 10 dati
-            TypeSeeder::class
+            TypeSeeder::class,
+
+            //altra seed dedicata
+            TechnologySeeder::class
         ]);
     }
 }

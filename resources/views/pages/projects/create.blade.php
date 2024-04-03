@@ -40,6 +40,22 @@
             <option value="{{ $item->id }}">{{ $item->name }}</option>
         @endforeach
     </select>
+
+    {{-- creiamo la select per selezionare la tecnologia --}}
+<div class="mb-3">
+    <label for="technologies" class="form-label">Scegli la tecnologia</label>
+
+    <select multiple  class="form-select form-select-lg " name="technologies[]" id="technologies">
+        <option  value="">Seleziona un type</option>
+        
+        @forelse ($technologies as $item)
+            
+        <option value="{{ $item->id }}">{{ $item->name }}</option>
+        @empty
+            <option value="">Non ci sono </option>
+        @endforelse 
+       
+    </select>
 </div>
 
             <div class="mb-3">
