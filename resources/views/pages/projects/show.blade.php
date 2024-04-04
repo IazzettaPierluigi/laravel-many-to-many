@@ -16,7 +16,13 @@
           </p>
 
           <p class="text-primary">
-            {{ $project->technology ? $project->technology->name : 'Questo progetto non ha un tecnologie indicate' }}
+            @if ($project->technologies->isNotEmpty())
+        @foreach ($project->technologies as $technology)
+            {{ $technology->name }}@if (!$loop->last), @endif
+        @endforeach
+    @else
+        Questo progetto non ha tecnologie indicate.
+    @endif
           </p>
           <p class="card-text">{{$project->description}}</p>
         </div>
