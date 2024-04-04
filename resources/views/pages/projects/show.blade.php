@@ -14,6 +14,10 @@
           <p class="text-danger">
             {{ $project->type ? $project->type->name : 'Questo progetto non ha un type' }}
           </p>
+
+          <p class="text-primary">
+            {{ $project->technology ? $project->technology->name : 'Questo progetto non ha un tecnologie indicate' }}
+          </p>
           <p class="card-text">{{$project->description}}</p>
         </div>
       </div>
